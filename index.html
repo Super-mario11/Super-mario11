@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f0f1a" />
+  <meta name="description" content="Aesthetic GitHub portfolio for Super-mario11 with live repositories and activity." />
+  <title>Super-mario11 | GitHub Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hero">Skip to content</a>
+  <div class="bg-orb orb-a" aria-hidden="true"></div>
+  <div class="bg-orb orb-b" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div id="scroll-progress"></div>
+  <div id="cursor-aura" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <header class="topbar glass">
+    <a href="#hero" class="brand">SUPER-MARIO11</a>
+    <nav>
+      <a href="#snapshot" class="nav-link">Snapshot</a>
+      <a href="#repos" class="nav-link">Repos</a>
+      <a href="#stats" class="nav-link">Stats</a>
+      <a href="#activity" class="nav-link">Activity</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="ripple-btn" type="button" aria-label="Toggle theme">Theme</button>
+      <button id="refresh-btn" class="ripple-btn" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="hero" class="section hero reveal">
+      <div class="hero-panel glass">
+        <img id="avatar" class="avatar" src="" alt="Super-mario11 avatar" loading="lazy" />
+        <div class="hero-copy">
+          <p class="eyebrow">GitHub Portfolio</p>
+          <h1 id="username">Loading...</h1>
+          <p id="bio">Fetching profile...</p>
+          <div class="hero-chips">
+            <span class="chip">Live GitHub Data</span>
+            <span class="chip">Creative UI</span>
+            <span class="chip">Vanilla JS</span>
+          </div>
+          <div class="typing-wrap"><span id="typing-text"></span><span class="cursor">|</span></div>
+          <div class="hero-actions">
+            <a id="profile-link" class="ripple-btn" href="https://github.com/Super-mario11" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+            <a class="ripple-btn" href="#repos">View Projects</a>
+          </div>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <article class="metric glass"><h3>Followers</h3><p id="followers">--</p></article>
+        <article class="metric glass"><h3>Following</h3><p id="following">--</p></article>
+        <article class="metric glass"><h3>Public Repos</h3><p id="public-repos">--</p></article>
+        <article class="metric glass"><h3>Recent Commits</h3><p id="recent-commits">--</p></article>
+      </div>
+    </section>
+
+    <section class="section reveal compact">
+      <div class="portfolio-strip">
+        <article class="strip-card glass">
+          <p>Design</p>
+          <h3>Neon Glass System</h3>
+        </article>
+        <article class="strip-card glass">
+          <p>Data</p>
+          <h3>Real-Time GitHub API</h3>
+        </article>
+        <article class="strip-card glass">
+          <p>Motion</p>
+          <h3>Smooth Scroll + Tilt</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="snapshot" class="section reveal">
+      <div class="section-head">
+        <h2>OneFetch Snapshot</h2>
+      </div>
+      <div class="onefetch glass">
+        <pre id="onefetch-ascii" class="onefetch-ascii skeleton">Loading snapshot...</pre>
+        <div id="onefetch-meta" class="onefetch-meta"></div>
+      </div>
+    </section>
+
+    <section id="repos" class="section reveal">
+      <div class="section-head">
+        <h2>Top Repositories</h2>
+        <input id="repo-search" type="search" placeholder="Search repositories..." aria-label="Search repositories" autocomplete="off" />
+      </div>
+      <p class="subtle" id="last-updated">Last synced: --</p>
+      <p class="subtle" id="api-status">API: checking rate limit...</p>
+      <div id="repos-grid" class="repos-grid"></div>
+      <p id="repos-empty" class="hidden">No repositories match your search.</p>
+    </section>
+
+    <section id="recent-repos" class="section reveal">
+      <div class="section-head">
+        <h2>Recently Added Repos</h2>
+      </div>
+      <div id="recent-repos-grid" class="repos-grid"></div>
+    </section>
+
+    <section id="stats" class="section reveal">
+      <div class="section-head">
+        <h2>GitHub Stats</h2>
+      </div>
+      <div class="stats-shell glass">
+        <div class="stats-shell-head">
+          <p class="stats-kicker">Live Insight Panel</p>
+          <p class="stats-note">Auto-generated from live GitHub endpoints</p>
+        </div>
+        <div class="stats-grid">
+        <figure class="stat-card stat-graph glass">
+          <figcaption class="stat-title">Contribution Activity</figcaption>
+          <img class="stat-img lazy-media" loading="lazy" decoding="async" fetchpriority="low" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-dark-src="https://github-readme-activity-graph.vercel.app/graph?username=Super-mario11&theme=github-dark" data-light-src="https://github-readme-activity-graph.vercel.app/graph?username=Super-mario11&theme=github" alt="Contribution graph for Super-mario11" />
+          <figcaption class="stat-fallback hidden">Contribution graph failed to load.</figcaption>
+        </figure>
+        <figure class="stat-card stat-mini glass">
+          <figcaption class="stat-title">Profile Metrics</figcaption>
+          <img class="stat-img lazy-media" loading="lazy" decoding="async" fetchpriority="low" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-dark-src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Super-mario11&theme=github_dark" data-light-src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Super-mario11&theme=github" alt="GitHub stats for Super-mario11" />
+          <figcaption class="stat-fallback hidden">GitHub stats failed to load.</figcaption>
+        </figure>
+        <figure class="stat-card stat-mini glass">
+          <figcaption class="stat-title">Language Focus</figcaption>
+          <img class="stat-img lazy-media" loading="lazy" decoding="async" fetchpriority="low" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-dark-src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Super-mario11&theme=github_dark" data-light-src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Super-mario11&theme=github" alt="Top languages for Super-mario11" />
+          <figcaption class="stat-fallback hidden">Top languages failed to load.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="activity" class="section reveal">
+      <div class="section-head">
+        <h2>Recent Activity</h2>
+      </div>
+      <ul id="activity-list" class="activity-list"></ul>
+    </section>
+  </main>
+
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
